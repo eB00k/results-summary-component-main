@@ -127,6 +127,7 @@ body .container .box .secondary button {
 @media (max-width: 700px) {
   body .container .box {
     width: 100%;
+    height: 100%;
     grid-template-columns: 1fr;
     border-radius: 0;
   }
