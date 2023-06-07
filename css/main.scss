@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Mukta:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk";
+}
+
+$color-primary: #603ffc;
+$color-primary-circle: #4924ce;
+$color-secondary: #303b5a;
+$color-light: #cac2ec;
+
+$clr-green: #80c2b2;
+$clr-green-light: #f2fbfa;
+$clr-yellow: #e2d093;
+$clr-yellow-light: #fffbf2;
+$clr-red: #e58789;
+$clr-red-light: #fff6f5;
+$clr-blue: #494fa0;
+$clr-blue-light: #f3f3fd;
+
+body {
+  .container {
+    width: 100%;
+    min-height: 100lvh;
+    display: grid;
+    place-items: center;
+    .box {
+      width: 60%;
+      max-width: 600px;
+      min-width: 300px;
+      box-shadow: 0 4px 20px 5px rgba(76, 106, 212, 0.1);
+      border-radius: 2rem;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      overflow: hidden;
+
+      // PRIMARY
+      .primary {
+        width: 100%;
+        background: $color-primary;
+        padding: 2rem 3rem;
+        border-radius: 2rem;
+        text-align: center;
+
+        h3 {
+          color: $color-light;
+        }
+
+        .circle {
+          width: 12rem;
+          aspect-ratio: 1/1;
+          margin: 2rem auto;
+          background: linear-gradient(
+            180deg,
+            $color-primary-circle 60%,
+            transparent
+          );
+          border-radius: 50%;
+          color: white;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .score {
+            font-size: 4rem;
+            font-weight: 700;
+          }
+
+          .light-text {
+            font-weight: 600;
+            color: $color-light;
+          }
+        }
+
+        h2 {
+          color: white;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          color: $color-light;
+        }
+      }
+
+      // SECONDARY
+      .secondary {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        h3 {
+          color: $color-secondary;
+        }
+
+        .stats {
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+          margin-top: 1rem;
+          .stat {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            background-color: rgba(223, 213, 213, 0.416);
+            padding: 0.8rem;
+            border-radius: 0.6rem;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+        }
+
+        .stat:nth-child(1) {
+          background-color: $clr-red-light;
+          color: $clr-red;
+        }
+        .stat:nth-child(2) {
+          background-color: $clr-yellow-light;
+          color: $clr-yellow;
+        }
+        .stat:nth-child(3) {
+          background-color: $clr-green-light;
+          color: $clr-green;
+        }
+        .stat:nth-child(4) {
+          background-color: $clr-blue-light;
+          color: $clr-blue;
+        }
+
+        .stat {
+          .score {
+            color: #999;
+
+            .bold {
+              color: #303b5a;
+              font-weight: 600;
+            }
+          }
+        }
+
+        button {
+          border: none;
+          margin-top: 2rem;
+          padding: 0.8rem;
+          border-radius: 1.4rem;
+          font-size: 1rem;
+          font-weight: 500;
+          background-color: $color-secondary;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
+/* Media query for - MEDIUM DEVICES */
+
+@media (max-width: 900px) {
+  body {
+    .container .box {
+      width: 86%;
+    }
+  }
+}
+
+/* Media query for - SMALL DEVICES */
+
+@media (max-width: 700px) {
+  body {
+    .container .box {
+      width: 100%;
+      grid-template-columns: 1fr;
+      border-radius: 0;
+
+      .primary {
+        border-radius: 0 0 2rem 2rem;
+        .circle {
+
+          width: 9rem;
+          aspect-ratio: 1/1;
+          margin: 1rem auto;
+          
+          .score {
+            font-size: 3.5rem;
+          }
+
+        }
+      }
+
+      .secondary {
+        .stats {
+          gap: 1rem;
+        }
+      }
+      
+    }
+  }
+}
